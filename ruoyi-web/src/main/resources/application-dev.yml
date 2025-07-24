@@ -4,13 +4,13 @@ spring:
     host: localhost
     port: 6379
     password:
-    timeout: 6000ms  # 连接超时时长（毫秒）
+    timeout: 6000ms # 连接超时时长（毫秒）
     lettuce:
       pool:
-        max-active: 1000  # 连接池最大连接数（使用负值表示没有限制）
-        max-wait: -1ms      # 连接池最大阻塞等待时间（使用负值表示没有限制）
-        max-idle: 10      # 连接池中的最大空闲连接
-        min-idle: 5       # 连接池中的最小空闲连接
+        max-active: 1000 # 连接池最大连接数（使用负值表示没有限制）
+        max-wait: -1ms # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 10 # 连接池中的最大空闲连接
+        min-idle: 5 # 连接池中的最小空闲连接
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
@@ -19,14 +19,14 @@ spring:
       master:
         url: jdbc:mysql://localhost:3306/ry_ics?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
         username: root
-        password: root
+        password: sdt108
       # 从库数据源
       slave:
         #从数据源开关/默认关闭      测试环境
         enabled: false
         url: jdbc:mysql://localhost:3306/ry_ics?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
         username: root
-        password: root
+        password: sdt108
       # 初始连接数
       initialSize: 5
       # 最小连接池数量
@@ -74,22 +74,22 @@ dfs:
 # 公众号配置(必填)
 wx:
   miniapp:
-    appid: wx387e3486534565454545444444634658fef                        # 我乱输入的，哈哈哈哈（请换成自己的）
-    secret: a3f64d4963ae8fa24343436446c9910059e0ca326c         # 我乱输入的，哈哈哈哈（请换成自己的）
+    appid: wx387e3486534565454545444444634658fef # 我乱输入的，哈哈哈哈（请换成自己的）
+    secret: a3f64d4963ae8fa24343436446c9910059e0ca326c # 我乱输入的，哈哈哈哈（请换成自己的）
     token:
     aesKey:
-    msgDataFormat: JSON              # 消息格式，XML或者JSON.
-# 存储配置redis(可选)
-# 注意: 指定redis.host值后不会使用容器注入的redis连接(JedisPool)
+    msgDataFormat: JSON # 消息格式，XML或者JSON.
+    # 存储配置redis(可选)
+    # 注意: 指定redis.host值后不会使用容器注入的redis连接(JedisPool)
     config-storage:
-      type: Jedis                     # 配置类型: Memory(默认), Jedis, RedisTemplate
-      key-prefix: wa                  # 相关redis前缀配置: wa(默认)
+      type: Jedis # 配置类型: Memory(默认), Jedis, RedisTemplate
+      key-prefix: wa # 相关redis前缀配置: wa(默认)
       redis:
         host: localhost
         password:
         port: 6379
-# http客户端配置
-      http-client-type: HttpClient      # http客户端类型: HttpClient(默认), OkHttp, JoddHttp
+      # http客户端配置
+      http-client-type: HttpClient # http客户端类型: HttpClient(默认), OkHttp, JoddHttp
       http-proxy-host:
       http-proxy-port:
       http-proxy-username:

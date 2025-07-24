@@ -50,5 +50,59 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  @import "index";
+  @ant-pro-prefix: ant-pro;
+
+  @numberInfo-prefix-cls: ~"@{ant-pro-prefix}-number-info";
+
+  .@{numberInfo-prefix-cls} {
+
+    .ant-pro-number-info-subtitle {
+      color: rgba(0, 0, 0, 0.45);
+      font-size: 14px;
+      height: 22px;
+      line-height: 22px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-all;
+      white-space: nowrap;
+    }
+
+    .number-info-value {
+      margin-top: 4px;
+      font-size: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-all;
+      white-space: nowrap;
+
+      & > span {
+        color: rgba(0, 0, 0, 0.85);
+        display: inline-block;
+        line-height: 32px;
+        height: 32px;
+        font-size: 24px;
+        margin-right: 32px;
+      }
+
+      .sub-total {
+        color: rgba(0, 0, 0, 0.45);
+        font-size: 16px;
+        vertical-align: top;
+        margin-right: 0;
+        i {
+          font-size: 12px;
+          transform: scale(0.82);
+          margin-left: 4px;
+        }
+        :global {
+          .anticon-caret-up {
+            color: #f5222d;
+          }
+          .anticon-caret-down {
+            color: #52c41a;
+          }
+        }
+      }
+    }
+  }
 </style>
